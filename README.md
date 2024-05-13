@@ -14,7 +14,7 @@ The Route Announcer extension makes htmx navigation accessible by adding an new 
 Install the extension by including the script into your page.
 
 ```html
-<script src="https://unpkg.com/htmx-route-announcer@latest/index.js"></script>
+<script src="https://unpkg.com/htmx-route-announcer/index.js"></script>
 ```
 
 Activate the extension by adding `hx-ext` attribute to your page
