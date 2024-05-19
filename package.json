@@ -39,6 +39,12 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    "node": {
+      "import": "./dist/index.esm.js",
+      "require": "./dist/index.js"
+    }
+  },
   "author": "Jacob Roling",
   "license": "MIT",
   "devDependencies": {
