@@ -1,10 +1,22 @@
+
+function $parcel$defineInteropFlag(a) {
+  Object.defineProperty(a, '__esModule', {value: true, configurable: true});
+}
+
+function $parcel$export(e, n, v, s) {
+  Object.defineProperty(e, n, {get: v, set: s, enumerable: true, configurable: true});
+}
+
+$parcel$defineInteropFlag(module.exports);
+
+$parcel$export(module.exports, "default", () => $073778a20bf8df7b$export$2e2bcd8739ae039);
 /*
     Route Announcer Extension
     ============================
     This extension adds a route announcer for screen readers to htmx.
     Based on the route announcer from Astro View Transitions API (https://github.com/withastro/astro/blob/main/packages/astro/src/transitions/router.ts#L63)
     by Astro.
-*/ var $be89f5ddec8a5443$export$2e2bcd8739ae039 = {
+*/ var $073778a20bf8df7b$export$2e2bcd8739ae039 = {
     onEvent: (name, _)=>{
         if (name === "htmx:afterSwap") {
             if (!document.getElementById("htmx-route-announcer")) {
@@ -28,4 +40,4 @@
 };
 
 
-//# sourceMappingURL=index.esm.js.map
+//# sourceMappingURL=index.cjs.map

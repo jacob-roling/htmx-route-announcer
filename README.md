@@ -9,13 +9,30 @@ The Route Announcer extension makes htmx navigation accessible by adding an new 
 > [!WARNING]
 > It is strongly recommend you always include a `<title>` in each page for accessibility.
 
-## How to use
+## Installation
+
+### Browser
 
 Install the extension by including the script into your page.
 
 ```html
 <script src="https://unpkg.com/htmx-route-announcer/dist/ext.min.js"></script>
 ```
+
+### Bundler
+
+```bash
+npm install htmx-route-announcer
+```
+
+```javascript
+import htmx from "htmx.org";
+import RouteAnnouncer from "htmx-route-announcer";
+
+htmx.defineExtension("route-announcer", RouteAnnouncer);
+```
+
+## Usage
 
 Activate the extension by adding `hx-ext` attribute to your page
 
