@@ -2,12 +2,23 @@
   "name": "htmx-route-announcer",
   "version": "0.0.2",
   "description": "The Route Announcer extension makes htmx navigation accessible by adding a route announcer for assistive technologies.",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "source": "src/index.js",
+  "scripts": {
+    "dev": "parcel watch",
+    "build": "parcel build"
+  },
   "keywords": [
     "htmx",
     "extension",
     "accessibility"
   ],
+  "files": [
+    "dist"
+  ],
   "author": "Jacob Roling",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
 }
