@@ -4,7 +4,7 @@
     This extension adds a route announcer for screen readers to htmx.
     Based on the route announcer from Astro View Transitions API (https://github.com/withastro/astro/blob/main/packages/astro/src/transitions/router.ts#L63)
     by Astro.
-*/ var $3d4c03e71e855c47$export$2e2bcd8739ae039 = {
+*/ var $be89f5ddec8a5443$export$2e2bcd8739ae039 = {
     onEvent: (name, _)=>{
         if (name === "htmx:afterSwap") {
             if (!document.getElementById("htmx-route-announcer")) {
@@ -28,4 +28,4 @@
 };
 
 
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=index.esm.js.map

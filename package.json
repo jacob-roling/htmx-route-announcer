@@ -2,8 +2,31 @@
   "name": "htmx-route-announcer",
   "version": "0.0.3",
   "description": "The Route Announcer extension makes htmx navigation accessible by adding a route announcer for assistive technologies.",
-  "main": "dist/index.js",
-  "source": "src/index.js",
+  "bundler-common": "dist/index.js",
+  "bundler-esm": "dist/index.esm.js",
+  "extension": "dist/ext.min.js",
+  "targets": {
+    "bundler-common": {
+      "source": "src/index.js",
+      "context": "node",
+      "outputFormat": "commonjs",
+      "optimize": false
+    },
+    "bundler-esm": {
+      "source": "src/index.js",
+      "context": "node",
+      "outputFormat": "esmodule",
+      "optimize": false
+    },
+    "extension": {
+      "source": "src/ext.js",
+      "engines": {
+        "browsers": "> 0.5%, last 2 versions, not dead"
+      },
+      "context": "browser",
+      "outputFormat": "global"
+    }
+  },
   "scripts": {
     "dev": "parcel watch",
     "build": "parcel build"
