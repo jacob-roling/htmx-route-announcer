@@ -9,27 +9,25 @@
 export default {
   onEvent: (name, _) => {
     if (name === "htmx:afterSwap") {
-      const announcer = document.getElementById("htmx-route-announcer");
+      let announcer = document.getElementById("htmx-route-announcer");
 
-      if (announcer) {
-        announcer.textContent = title;
-      } else {
-        let div = document.createElement("div");
-        div.setAttribute("id", "htmx-route-announcer");
-        div.setAttribute("aria-live", "assertive");
-        div.setAttribute("aria-atomic", "true");
-        div.setAttribute(
+      if (!announcer) {
+        announcer = document.createElement("div");
+        announcer.setAttribute("id", "htmx-route-announcer");
+        announcer.setAttribute("aria-live", "assertive");
+        announcer.setAttribute("aria-atomic", "true");
+        announcer.setAttribute(
           "style",
           "position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px"
         );
-        document.body.append(div);
+        document.body.append(announcer);
       }
 
       const timeout = setTimeout(
         () => {
-          div.textContent =
+          announcer.textContent =
             document.title ||
-            document.querySelector("h1")?.textContent ||
+            document.querySelector("h1").textContent ||
             location.pathname;
           clearTimeout(timeout);
         },

@@ -19,18 +19,17 @@ $parcel$export(module.exports, "default", () => $073778a20bf8df7b$export$2e2bcd8
 */ var $073778a20bf8df7b$export$2e2bcd8739ae039 = {
     onEvent: (name, _)=>{
         if (name === "htmx:afterSwap") {
-            const announcer = document.getElementById("htmx-route-announcer");
-            if (announcer) announcer.textContent = title;
-            else {
-                let div1 = document.createElement("div");
-                div1.setAttribute("id", "htmx-route-announcer");
-                div1.setAttribute("aria-live", "assertive");
-                div1.setAttribute("aria-atomic", "true");
-                div1.setAttribute("style", "position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px");
-                document.body.append(div1);
+            let announcer = document.getElementById("htmx-route-announcer");
+            if (!announcer) {
+                announcer = document.createElement("div");
+                announcer.setAttribute("id", "htmx-route-announcer");
+                announcer.setAttribute("aria-live", "assertive");
+                announcer.setAttribute("aria-atomic", "true");
+                announcer.setAttribute("style", "position:absolute;left:0;top:0;clip:rect(0 0 0 0);clip-path:inset(50%);overflow:hidden;white-space:nowrap;width:1px;height:1px");
+                document.body.append(announcer);
             }
             const timeout = setTimeout(()=>{
-                div.textContent = document.title || document.querySelector("h1")?.textContent || location.pathname;
+                announcer.textContent = document.title || document.querySelector("h1").textContent || location.pathname;
                 clearTimeout(timeout);
             }, // Much thought went into this magic number; the gist is that screen readers
             // need to see that the element changed and might not do so if it happens
