@@ -8,7 +8,6 @@
     onEvent: (name, _)=>{
         if (name === "htmx:afterSwap") {
             const announcer = document.getElementById("htmx-route-announcer");
-            const title = document.title || document.querySelector("h1")?.textContent || location.pathname;
             if (announcer) announcer.textContent = title;
             else {
                 let div1 = document.createElement("div");
@@ -19,7 +18,7 @@
                 document.body.append(div1);
             }
             const timeout = setTimeout(()=>{
-                div.textContent = title;
+                div.textContent = document.title || document.querySelector("h1")?.textContent || location.pathname;
                 clearTimeout(timeout);
             }, // Much thought went into this magic number; the gist is that screen readers
             // need to see that the element changed and might not do so if it happens
